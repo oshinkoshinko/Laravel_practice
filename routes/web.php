@@ -11,6 +11,10 @@
 |
 */
 
+use App\Http\Controllers\TestController;
+
 Route::get('/', function () {
     return view('welcome');
 });
+//TestControllerのindexへアクセス
+Route::get('tests/test', 'TestController@index');
