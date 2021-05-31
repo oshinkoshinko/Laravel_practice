@@ -15,7 +15,7 @@ class TestController extends Controller
         $values = Test::all();
 
         // dd($values); //変数の中身を確認できる
-        //tests.testのviewファイルへ飛ぶ
+        //tests.testのviewファイルへ飛ぶ compactでviewに複数の変数を渡す
         return view('tests.test', compact('values'));
     }
 }
