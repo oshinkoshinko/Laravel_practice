@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    indexです！
+                    createです
                 </div>
             </div>
         </div>

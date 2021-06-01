@@ -18,8 +18,14 @@ Route::get('/', function () {
 });
 //TestControllerのindexへアクセス
 Route::get('tests/test', 'TestController@index');
-//ContactFormControllerのindexへアクセス
-Route::get('contact/index', 'ContactFormController@index');
-// Auth::routes();
+
+//ログインユーザのみルーティング
+Route::group(['prefix' => 'contact', 'middleware' => 'auth'], function(){
+    //ContactFormControllerのindexへアクセス
+    Route::get('index', 'ContactFormController@index')->name('contact.index');
+    Route::get('create', 'ContactFormController@create')->name('contact.create');
+});
+
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
