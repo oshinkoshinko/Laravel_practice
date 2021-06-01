@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+//DBに保存用
+use App\Models\ContactForm;
+
 class ContactFormController extends Controller
 {
     /**
@@ -37,7 +40,22 @@ class ContactFormController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //ContactFormを初期化 DB保存
+        $contact = new ContactForm;
+
+        $contact->your_name = $request->input('your_name');
+        $contact->title = $request->input('title');
+        $contact->email = $request->input('email');
+        $contact->url = $request->input('url');
+        $contact->gender = $request->input('gender');
+        $contact->age = $request->input('age');
+        $contact->contact = $request->input('contact');
+
+        //保存
+        $contact->save();
+        //保存後にリダイレクト
+        return redirect('contact/index');
+        // dd($your_name);
     }
 
     /**

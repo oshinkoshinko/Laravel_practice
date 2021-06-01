@@ -24,6 +24,7 @@ Route::group(['prefix' => 'contact', 'middleware' => 'auth'], function(){
     //ContactFormControllerのindexへアクセス
     Route::get('index', 'ContactFormController@index')->name('contact.index');
     Route::get('create', 'ContactFormController@create')->name('contact.create');
+    Route::post('store', 'ContactFormController@store')->name('contact.store');
 });
 
 Auth::routes();

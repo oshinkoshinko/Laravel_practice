@@ -15,7 +15,9 @@
                     @endif
 
                     createです
-                    <form method='POST' action="">
+                    <form method='POST' action="{{route('contact.store')}}">
+                    <!-- フォームに@csrf必須 -->
+                    @csrf
                     氏名
                     <input type="text" name="your_name">
                     <br>
@@ -42,10 +44,12 @@
                     <option value="5">50~59歳</option>
                     <option value="6">60~</option>
                     </select>
-                    </form>
                     <br>
                     お問い合わせ内容
-                    <textarea type="checkbox" name="caution" value="1">注意事項に同意する</textarea>
+                    <textarea name="contact"></textarea>
+                    <br>
+
+                    <input type="checkbox" name="caution" value="1">注意事項に同意する</input>
                     <br>
 
                     <input class="btn btn-info" type="submit" value="登録する">
