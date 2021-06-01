@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 //DBに保存用
 use App\Models\ContactForm;
+//クエリビルダ用
+use Illuminate\Support\Facades\DB;
 
 class ContactFormController extends Controller
 {
@@ -16,8 +18,16 @@ class ContactFormController extends Controller
      */
     public function index()
     {
-        //
-        return view('contact.index');
+        //eloquent or ORマッパー all()でDBのデータ全て取得
+        // $contacts = ContactForm::all();
+
+        //クエリビルダ 指定したデータを取得
+        $contacts = DB::table('contact_forms')
+        ->select('id','your_name','title')
+        ->get();
+
+        //compactで変数をviewへ渡す
+        return view('contact.index', compact('contacts'));
     }
 
     /**

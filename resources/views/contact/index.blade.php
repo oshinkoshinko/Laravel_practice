@@ -18,7 +18,11 @@
                         新規登録
                     </button>
                     </form>
-                    indexです！
+                    
+                    @foreach($contacts as $contact)
+                    {{ $contact->id}}
+                    {{ $contact->your_name}}
+                    @endforeach
                 </div>
             </div>
         </div>
