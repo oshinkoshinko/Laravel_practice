@@ -15,6 +15,41 @@
                     @endif
 
                     createです
+                    <form method='POST' action="">
+                    氏名
+                    <input type="text" name="your_name">
+                    <br>
+                    件名
+                    <input type="text" name="title">
+                    <br>
+                    メールアドレス
+                    <input type="email" name="email">
+                    <br>
+                    ホームページ
+                    <input type="url" name="url">
+                    <br>
+                    性別
+                    <input type="radio" name="gender" value="0">男性</input>
+                    <input type="radio" name="gender" value="1">女性</input>
+                    <br>
+                    年齢
+                    <select name="age">
+                    <option value="">選択してください</option>
+                    <option value="1">~19歳</option>
+                    <option value="2">20~29歳</option>
+                    <option value="3">30~39歳</option>
+                    <option value="4">40~49歳</option>
+                    <option value="5">50~59歳</option>
+                    <option value="6">60~</option>
+                    </select>
+                    </form>
+                    <br>
+                    お問い合わせ内容
+                    <textarea type="checkbox" name="caution" value="1">注意事項に同意する</textarea>
+                    <br>
+
+                    <input class="btn btn-info" type="submit" value="登録する">
+                    </form>
                 </div>
             </div>
         </div>
