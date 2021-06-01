@@ -15,7 +15,7 @@
                     @endif
 
                     editです
-                    <form method='POST' action="">
+                    <form method='POST' action="{{ route('contact.update', ['id' => $contact->id]) }}">
                     <!-- フォームに@csrf必須 -->
                     @csrf
 
