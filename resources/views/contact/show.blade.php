@@ -22,11 +22,11 @@
                     {{ $gender }}
                     {{ $age }}
                     {{ $contact->contact }}
-                    <form method='GET' action="">
+                    <form method='GET' action="{{route('contact.edit', ['id' => $contact->id])}}">
                     <!-- フォームに@csrf必須 -->
                     @csrf
 
-                    <input class="btn btn-info" type="submit" value="登録する">
+                    <input class="btn btn-info" type="submit" value="変更する">
                     </form>
                 </div>
             </div>
