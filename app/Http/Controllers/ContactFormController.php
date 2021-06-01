@@ -23,7 +23,8 @@ class ContactFormController extends Controller
 
         //クエリビルダ 指定したデータを取得
         $contacts = DB::table('contact_forms')
-        ->select('id','your_name','title')
+        ->select('id','your_name','title','created_at')
+        ->orderBy('created_at', 'asc')
         ->get();
 
         //compactで変数をviewへ渡す
