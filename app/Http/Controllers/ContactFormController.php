@@ -9,6 +9,8 @@ use App\Models\ContactForm;
 //クエリビルダ用
 use Illuminate\Support\Facades\DB;
 use App\Services\CheckFormData;
+//フォームリクエスト呼び出し storeメソッドに記載
+use App\Http\Requests\StoreContactForm;
 
 class ContactFormController extends Controller
 {
@@ -50,7 +52,7 @@ class ContactFormController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreContactForm $request)
     {
         //ContactFormを初期化 DB保存
         $contact = new ContactForm;
