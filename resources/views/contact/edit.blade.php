@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    editです
+                    編集画面です。
                     <form method='POST' action="{{ route('contact.update', ['id' => $contact->id]) }}">
                     <!-- フォームに@csrf必須 -->
                     @csrf
